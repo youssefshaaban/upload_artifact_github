@@ -1,9 +1,21 @@
 name: Upload artifact
-on: push
+
+on: push 
+
 env:
-   FILE_NAME: "yousef"
+   FILE_NAME: yousef
+
 jobs:
    upload:
+       runs-on: upuntu-latest
        steps:
-          - name: checkout code
-            uses: actions/checkout/@v3
+          - name: Checkout
+            uses: actions/checkout@v3.3.0   
+            
+          - name: Upload a Build Artifact
+            uses: actions/upload-artifact@v3.1.2
+            with:
+               # Artifact name
+             name: ${{ env.FILE_NAME }}
+             # A file, directory or wildcard pattern that describes what to upload
+             path: . 
