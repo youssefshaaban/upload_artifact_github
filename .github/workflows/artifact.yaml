@@ -1,0 +1,9 @@
+name: Upload artifact
+on: push
+env:
+   FILE_NAME: "yousef"
+jobs:
+   upload:
+       steps:
+          - name: checkout code
+            uses: actions/checkout/@v3
